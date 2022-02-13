@@ -1,0 +1,559 @@
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+@font-face {
+  font-family: lobstr;
+  src: local("Segoe UI Light"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf)
+      format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: lobstr;
+  src: local("Segoe UI Semilight"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf)
+      format("truetype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: lobstr;
+  src: local("Segoe UI"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf)
+      format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: lobstr;
+  src: local("Segoe UI Semibold"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf)
+      format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: lobstr;
+  src: local("Segoe UI Bold"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf)
+      format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: lobstr;
+  src: local("Segoe UI Black"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2)
+      format("woff2"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff)
+      format("woff"),
+    url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf)
+      format("truetype");
+  font-weight: 900;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
+  }
+}
+
+.spinner-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.safe-green {
+  color: #28bb93 !important;
+  font-weight: 600;
+}
+
+.danger-red {
+  color: #ff0000 !important;
+  font-weight: 600;
+}
+
+.download-run {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
+  height: 27px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: #efeff4;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: lobstr;
+  color: #161616;
+}
+
+#root {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content .bar {
+  height: 48px;
+  background-color: #161616;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  padding: 0 160px;
+}
+
+.content .bar .logo {
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content .bar .logout {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  column-gap: 5px;
+  cursor: pointer;
+}
+
+.content span svg {
+  width: 20px;
+  height: 20px;
+}
+
+.content .main--content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px 160px;
+}
+
+.content .main--content header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.content .main--content header .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content .main--content header .subtitle {
+  font-size: 14px;
+}
+
+.content .main--content main {
+  margin-top: 37px;
+}
+
+/* tabs */
+.section--tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.section--tabs .tab-container {
+  display: flex;
+  column-gap: 30px;
+}
+
+.section--tabs .tab-container .tab {
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.section--tabs .tab-container .tab.--active {
+  border-bottom: 2px solid #c10016;
+}
+
+.section--tabs .tab-container .tab.--active span {
+  opacity: 1;
+  color: #c10016;
+}
+
+.section--tabs .tab-container .tab span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.tab-content {
+  margin-top: 30px;
+}
+
+.tab-content .grid {
+  margin-top: 20px;
+}
+
+/* comparables section */
+.comparables {
+  display: flex;
+  flex-direction: column;
+}
+
+.comparables .filters {
+  display: flex;
+  column-gap: 40px;
+}
+
+.comparables .filters .filter {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.comparables .filters .filter select {
+  width: 150px;
+  height: 30px;
+  border: solid 1px rgba(22, 22, 22, 0.2);
+  background-color: transparent;
+  outline: none;
+  padding: 0 15px;
+  font-size: 13px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("./chevron_down.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.4em top 50%, 0 0;
+  background-size: 1.3em auto, 100%;
+}
+
+.comparables .filters .filter span {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.comparables .filters .filter.run .value-options {
+  display: flex;
+  column-gap: 10px;
+}
+
+.comparables .filters .filter.run .value-options button {
+  background-color: transparent;
+  border: solid 1px rgba(22, 22, 22, 0.2);
+  color: rgba(22, 22, 22, 0.6);
+  width: 78px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  cursor: pointer;
+}
+
+.comparables .filters .filter.run .value-options button.selected {
+  border: solid 1px #c10016;
+}
+
+.upload_status {
+  width: 100%;
+  height: 24px;
+  border-radius: 5px;
+  border: solid 1px rgba(48, 39, 90, 0.1);
+  background-color: #fff;
+  font-size: 11px;
+  color: rgba(10, 37, 64, 0.7);
+  font-weight: 600;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  justify-content: space-around;
+}
+
+.upload_status svg{
+  width: 14px;
+  height: 14px;
+}
+
+.upload_status.running{
+  color: #c10016;
+}
+
+.upload_status.success{
+  background-color: #54e7a3;
+  color: #fff;
+}
+
+.upload_status.upload svg{
+  color: rgba(22,22,22,0.1)
+}
+
+.upload_status.running svg{
+  color: #c10016;
+}
+
+
+.upload_status.success svg{
+  color: #fff;
+}
+
+.login__Container {
+  display: table;
+  width: 100%;
+  height: 100vh;
+}
+
+.login__form {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.login__form header {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.login__form main {
+  padding-top: 55px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 360px;
+  margin: 0 auto;
+}
+
+.login__form main .auth__input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.login__form main .auth__input span {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.login__form main .auth__input input {
+  font-size: 14px;
+  height: 50px;
+  outline: none;
+  border: solid 1px rgba(22, 22, 22, 0.14);
+  background-color: #fff;
+  padding: 0 15px;
+}
+
+.login__form main .auth__extras {
+  margin-top: -12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__form main .checkbox__wrapper {
+  display: flex;
+  column-gap: 9.6px;
+  align-items: center;
+}
+
+.login__form main .checkbox__wrapper span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login__form main button {
+  width: auto;
+  height: auto;
+  opacity: 0.6;
+  font-size: 13px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.login__form main .auth__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__form main .auth__buttons button {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  opacity: 1;
+  font-weight: 600;
+  outline: none;
+  background-color: #161616;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login__form main .auth__error {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f00;
+}
+
+.e-grid{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.07);
+  background-color: #fff;
+  border: none;
+  font-family: 'lobstr';
+}
+
+.e-grid .e-gridheader{
+  background-color: rgba(22, 22, 22, 0.03);
+  padding-right: 0 !important;
+}
+
+.e-grid.e-default .e-headercell{
+  background-color: rgba(22, 22, 22, 0.03);
+}
+
+
+.e-grid .e-headercelldiv{
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(22,22,22,0.4);
+}
+
+.e-grid [class^='e-']{
+  border-bottom: 1px solid rgba(22,22,22,0.06);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.e-grid .e-rowcell{
+  font-size: 13px;
+}
+
+.e-pager{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.e-pager .e-currentitem{
+  background-color: #fff;
+  color: #161616;
+  border: 1px solid #c10016;
+}
+
+.e-pager .e-currentitem, .e-pager .e-currentitem:hover{
+  border-radius: 0;
+}
+
+.e-first, .e-last{
+  display: none !important;
+}
+
+.custom__Pagination{
+  height: 64.5px;
+  display:flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.custom__Pagination .results .showing{
+  font-weight: 600;
+}
+
+.custom__Pagination .pager{
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.custom__Pagination .pager .pages{
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.custom__Pagination .pager .pages .page{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px rgba(22,22,22,0.1);
+  font-size: 12px;
+  cursor: pointer
+}
+
+.custom__Pagination .pager .pages .page.--current{
+  background-color: #fff;
+  color: #161616;
+  border: 1px solid #c10016;
+}
+
+
+
+.custom__Pagination .pager .previous, .custom__Pagination .pager .next{
+  width: 25px;
+  height: 25px;
+  border: solid 1px rgba(22,22,22,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom__Pagination .pager .previous svg, .custom__Pagination .pager .next svg{
+  width: 18px;
+  height: 18px;
+}
+
+.progress_bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  font-size:11px;
+  font-weight: 600;
+}
