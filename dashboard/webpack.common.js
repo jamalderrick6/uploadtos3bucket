@@ -2,22 +2,21 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  // mode: "development",
-  entry: {
-    index: "./src/index.tsx",
-  },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"],
-  },
+  entry: "./src/index.js",
   output: {
     filename: "bundle.[hash].js",
     publicPath: "/",
   },
-  // devtool: "inline-source-map",
+  target: "web",
+  resolve: {
+    alias: {
+      "react-dom": "@hot-loader/react-dom",
+    },
+  },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
@@ -39,15 +38,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "public/index.html",
+      favicon: "public/favicon.ico",
     }),
   ],
-  // devServer: {
-  //   host: "localhost",
-  //   compress: true,
-  //   allowedHosts: [".lobstr.io"],
-  //   port: port,
-  //   historyApiFallback: true,
-  //   open: true,
-  //   hot: true,
-  // },
 };
